@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, SafeAreaView, Pressable, TextInput, FlatList, A
 import ShoppingItem from './components/ShoppingItem';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useEffect, useState } from 'react';
-import { app, db, getFirestore, collection, addDoc, getDocs, deleteDoc, doc } from "./firebase/index";
+import { db, collection, addDoc, getDocs, deleteDoc, doc } from "./firebase/index";
 
 export default function App() {
   const [title, setTitle] = useState(""); 
@@ -95,6 +95,7 @@ export default function App() {
         onChangeText={(text) => setPrice(text)}
         keyboardType="numeric" // Csak számok beviteléhez
       />
+
       <Pressable onPress={addShoppingItem} style={styles.addButton}>
         <Text style={styles.addButtonText}>Add Item</Text>
       </Pressable>
@@ -134,7 +135,6 @@ const styles = StyleSheet.create({
     width: "90%",
     alignSelf: "center",
     borderRadius: 10,
-    marginTop: "auto",
     marginBottom: 10,
   },
   bin: {
